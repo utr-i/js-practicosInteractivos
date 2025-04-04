@@ -1,21 +1,25 @@
-// TODO: Pedir el nombre con prompt
-// TODO: Pedir la edad
-// TODO: Calcular el precio de la entrada según la edad
-// TODO: Mostrar un mensaje personalizado con alert
+// Ejercicio 3
+/* Mostrar resultado con alert
+IMC < 18.5 → "Bajo peso"
 
-// Ejemplo final esperado:
-// "Hola Juan, tenés 16 años. Tu entrada cuesta $1500"
+18.5 a 24.9 → "Peso normal"
 
-const nombre = prompt("Ingrese su nombre").toLowerCase()
-alert("Su nombre es:" + nombre)
-const edad = parseInt(prompt("Ingrese su edad"))
-nombre.toLowerCase()
-if (edad === 18) {
-    alert("Su edad es 18")
-} else if (edad === 17) {
-    alert("Su edad es 17")
-} else {
-    alert("Desconozco su edad")
+25 a 29.9 → "Sobrepeso"
+
+30 o más → "Obesidad"
+ */
+const peso = parseFloat(prompt("Ingrese su peso: (87.6 kg ejemplos) "))
+const altura = parseFloat(prompt("Ingrese su altura: (1.74 mts ejemplos) "))
+const imc = peso / (altura * altura)
+console.log(imc)
+
+if (imc < 18.5) {
+    alert("Bajo peso")
 }
-
-console.log(nombre);
+else if (imc >= 18.5 && imc <= 24.9) {
+    alert("Peso normal")
+} else if (imc >= 25 && imc <= 29.9) {
+    alert("Sobrepeso")
+} else {
+    alert("Obesidad")
+}
