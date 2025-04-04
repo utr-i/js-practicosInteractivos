@@ -1,21 +1,24 @@
-// TODO: Pedir el nombre con prompt
-// TODO: Pedir la edad
-// TODO: Calcular el precio de la entrada según la edad
-// TODO: Mostrar un mensaje personalizado con alert
+// Práctico 2
 
-// Ejemplo final esperado:
-// "Hola Juan, tenés 16 años. Tu entrada cuesta $1500"
+const total = parseInt(prompt("Ingrese el total de la cuenta: "));
+const calidadServicio = prompt("¿Qué tal estuvo el servicio? (malo, bueno o excelente)");
+calidadServicio.toLowerCase();
+let propina = 0;
 
-const nombre = prompt("Ingrese su nombre").toLowerCase()
-alert("Su nombre es:" + nombre)
-const edad = parseInt(prompt("Ingrese su edad"))
-nombre.toLowerCase()
-if (edad === 18) {
-    alert("Su edad es 18")
-} else if (edad === 17) {
-    alert("Su edad es 17")
-} else {
-    alert("Desconozco su edad")
+if (calidadServicio === "malo") {
+    propina = 0.10;
+    alert("La propina es del 10%")
+}
+else if (calidadServicio === "bueno") {
+    propina = 0.15;
+    alert("La propina es del 15%")
+}
+else if (calidadServicio === "excelente") {
+    propina = 0.20;
+    alert("La propina es del 20%")
+}
+else {
+    alert("Respuesta incorrecta para la calidad del servicio");
 }
 
-console.log(nombre);
+alert("La propina fue considerada como: " + calidadServicio + " y deberá pagar $" + (total * propina + total));
